@@ -1,6 +1,6 @@
 # CNHypergraph
 
-0.Histograms is previous to choosing cohort
+0. Histograms is previous to choosing cohort
 
 1. FirstScript is for building hypergraph
 
