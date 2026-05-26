@@ -1,4 +1,5 @@
 # CNHypergraph
 
-1.Creating hypergraph with nodes as diseases and hyperedges as patient's visits
-2.Addimg attributes regarding diseases, patients and visits
+0.Histograms is previous to choosing cohort
+1.FirstScript is for building hypergraph
+2.Statistics is for its statistics
