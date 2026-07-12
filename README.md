@@ -1,11 +1,6 @@
 # FILE SELECTION
 
-I CHOOSING COHORT
-
-Histogram
-
-
-II HYPERGRAPH BUILDING
+HYPERGRAPH BUILDING
 
 
 1. FirstScript is for building hypergraph
