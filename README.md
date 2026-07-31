@@ -1,13 +1,3 @@
-# FILE SELECTION
+Disease_mappings contatins mappings to icd 131 and 34 chronic group.
 
-HYPERGRAPH BUILDING
-
-
-1. FirstScript is for building hypergraph
-
-2. Statistics is for counting statistics
-
-3. Visualization
-
-
-III
+FirstScript.ipynb prepares the data, while DescriptiveAnalysis.ipynb contains the final descriptive analyses.
