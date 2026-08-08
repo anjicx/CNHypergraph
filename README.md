@@ -6,9 +6,7 @@
 
 The original Hy-MMSBM implementation is vendored in `third_party/Hy-MMSBM` under its MIT license.
 
-- Upstream: https://github.com/nickruggeri/Hy-MMSBM
-- Commit: `6a12077120088857c2cd90f86cf0c28a80fe1c80`
-- Local modifications: none
+https://github.com/nickruggeri/Hy-MMSBM
 
 Hy uses the Python executable of the selected notebook kernel. Create and select a Python 3.9 environment:
 
