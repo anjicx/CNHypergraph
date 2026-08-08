@@ -1,0 +1,7 @@
+cohort_stage,n_patients,excluded_since_previous_stage,retained_from_previous_stage_percentage,excluded_sex_never_recorded,excluded_sex_inconsistent_across_stays
+Patients before filtering,129590,,100.0,,
+Valid sex and eligible 2003–2014 hospitalization,60229,69361,46.5,21570,85
+No hospitalization during washout,36207,24022,60.1,,
+At least one accepted A–N diagnosis,31715,4492,87.6,,
+At least two distinct ICD codes,15881,15834,50.1,,
+"Final adult cohort, entry age ≥20",12050,3831,75.9,,
