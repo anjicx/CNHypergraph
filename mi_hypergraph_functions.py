@@ -204,7 +204,7 @@ def NMIalign(G1, G2, partition):
     nmi21 = (H2 - CE2given1) / (H2 + 1e-100)
     return max(nmi12, nmi21)
 
-
+# Natural logs are acceptable because the scale cancels after normalization
 def NMIcross(G1, G2, partition):
     """Compute weighted NMIcross from Eqs. S9-S13, normalized as in Eq. (9)."""
     if not isinstance(G1, Mapping) or not isinstance(G2, Mapping):
