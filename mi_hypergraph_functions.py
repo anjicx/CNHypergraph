@@ -18,8 +18,8 @@ def logmultiset(n, k):
     return logchoose(n + k - 1, k)
 
 
-def coarse_grain(G, partition):
-    """Return the weighted hypergraph under the node partition."""
+def coarse_grain(G, partition):#coarse object is the hypergraph under the node partition so here it stays the same because B=N
+    """Return the weighted hypergraph under the node partition.Changed according to definition of weighted/multiscale hypergraph."""
     Gc = Counter()
     for edge, weight in G.items():
         coarse_edge = tuple(sorted(partition[node] for node in edge))
@@ -27,7 +27,7 @@ def coarse_grain(G, partition):
     return Gc
 
 
-def get_layers(G, partition):
+def get_layers(G, partition):#duplicates/multiplicities are now not discarded-partition is requiered
     """Split a weighted hypergraph into Counter layers."""
     layers = {len(edge): Counter() for edge in G}
     for edge, weight in coarse_grain(G, partition).items():
@@ -36,7 +36,7 @@ def get_layers(G, partition):
 
 
 def H(N, G, partition):
-    """Weighted cross entropy from Eq. S14."""
+    """Weighted cross entropy from Eqs.  S7 and S9."""
     B = len(set(partition))
     layers = get_layers(G, partition)
     return sum(
@@ -76,7 +76,7 @@ def get_sizes_proj(G, indices):
 
 
 def get_overlap_size(layerk, layerl):
-    """Calculate the S16/S17 weighted multiset overlap."""
+    """Calculate the S11/S12 weighted multiset overlap."""
     order = len(next(iter(layerl)))
     k = len(next(iter(layerk)))
 
@@ -103,7 +103,7 @@ def get_overlap_size(layerk, layerl):
 
 
 def CE_matrices(N, G1, G2, partition):
-    """Calculate the Eq. S15 weighted cross conditional-entropy matrices."""
+    """Calculate weighted conditional-description costs from Eqs. S8 and S10."""
     layers1 = get_layers(G1, partition)
     layers2 = get_layers(G2, partition)
     B = len(set(partition))
@@ -166,7 +166,8 @@ def CE_matrices(N, G1, G2, partition):
 
 
 def NMIalign(G1, G2, partition):
-    """Compute weighted NMIalign using same-order layer comparisons."""
+    """Compute weighted NMIalign from Eqs. S7-S8, normalized as in Eq. (9)."""
+
     if not isinstance(G1, Mapping) or not isinstance(G2, Mapping):
         raise TypeError("G1 and G2 must be weighted Counter or mapping inputs.")
     if partition is None or len(set(partition)) != len(partition):
@@ -205,7 +206,7 @@ def NMIalign(G1, G2, partition):
 
 
 def NMIcross(G1, G2, partition):
-    """Compute weighted NMIcross, selecting the optimal k as in Eq. S18."""
+    """Compute weighted NMIcross from Eqs. S9-S13, normalized as in Eq. (9)."""
     if not isinstance(G1, Mapping) or not isinstance(G2, Mapping):
         raise TypeError("G1 and G2 must be weighted Counter or mapping inputs.")
     if partition is None or len(set(partition)) != len(partition):
