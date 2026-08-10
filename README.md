@@ -2,6 +2,10 @@
 
 `disease_mappings.py` contains the mappings for the ICD blocks and 34 chronic-disease groups. `FirstScript.ipynb` prepares the analytical tables, `DescriptiveAnalysis.ipynb` contains the descriptive analyses, and `Hy.ipynb` performs Hy-MMSBM analysis.
 
+## Hypergraph mutual information
+
+`NMIAnalysis.ipynb` uses the weighted `NMIalign` and `NMIcross` implementation in `mi_hypergraph_functions.py`, adapted from [hfelippe/hypergraph-MI](https://github.com/hfelippe/hypergraph-MI).
+
 ## Hy-MMSBM
 
 The original Hy-MMSBM implementation is vendored in `third_party/Hy-MMSBM` under its MIT license.
